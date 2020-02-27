@@ -15,7 +15,7 @@ kmeans = MiniBatchKMeans(n_clusters=5,
                          random_state=0,
                          batch_size=10000)
 kmeans = kmeans.fit(fc)
-pickle.dump(kmeans, open('../models/tray_detection.sav', 'wb'))
+pickle.dump(kmeans, open('../utils/tray_detection.sav', 'wb'))
 clus = kmeans.predict(fc)
 clus = clus.reshape(frame.shape[0], frame.shape[1])
 
@@ -62,7 +62,7 @@ kmeans2 = MiniBatchKMeans(n_clusters=n_clus,
                           random_state=0,
                           batch_size=10000)
 kmeans2 = kmeans2.fit(fc2)
-pickle.dump(kmeans2, open('../models/dice_detector.sav', 'wb'))
+pickle.dump(kmeans2, open('../utils/dice_detector.sav', 'wb'))
 clus2 = kmeans2.predict(fc2)
 clus2 = clus2.reshape(img2.shape[0], img2.shape[1])
 
